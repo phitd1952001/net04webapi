@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace webapi.Models;
 
@@ -14,6 +15,6 @@ public partial class DonHang
     public int? MaKhachHang { get; set; }
 
     public virtual ICollection<DonHangSanPham> DonHangSanPhams { get; set; } = new List<DonHangSanPham>();
-
+    [JsonIgnore]
     public virtual KhachHang? MaKhachHangNavigation { get; set; }
 }
